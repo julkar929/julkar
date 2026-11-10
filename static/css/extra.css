@@ -1,0 +1,87 @@
+/* Additions for the updated portfolio */
+.banner-area{max-height:none;min-height:620px}
+.banner-area .bg-overlay.black{background:transparent}
+.welcome-text{padding-top:190px;padding-bottom:90px;position:relative}
+.welcome-text .role-line{font-size:15px;color:#f3d6f4;margin:-6px 0 28px}
+.hero-links{margin-top:22px}
+.hero-links a.icon-link{display:inline-block;margin:0 8px;color:#fff;font-size:20px;opacity:.85}
+.hero-links a.icon-link:hover{opacity:1;color:#fff}
+.stats-area{background:#fff;margin-top:-50px;position:relative;z-index:3}
+.stats-box{background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.12);border-radius:6px;padding:26px 10px;display:flex;flex-wrap:wrap}
+.stat{flex:1 1 25%;text-align:center;padding:8px 10px;min-width:140px}
+.stat b{display:block;font-size:30px;color:#6d0770;line-height:1.2}
+.stat span{font-size:12px;color:#666;text-transform:uppercase}
+.about-left .btn-row a{margin-right:8px;margin-bottom:8px;display:inline-block}
+.profile img{border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.skill-row{padding:14px 0;border-bottom:1px solid #eee}
+.skill-row h4{font-size:13px;color:#6d0770;margin-bottom:6px}
+.skill-row p{margin:0}
+.tl-item{border-left:3px solid #6d0770;padding:2px 0 18px 20px;margin-left:6px;position:relative}
+.tl-item:before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid #6d0770}
+.tl-item h3{font-size:16px;margin-bottom:2px}
+.tl-item .org{color:#6d0770;font-size:13px;font-weight:600}
+.tl-item .period{font-size:12px;color:#888;margin-bottom:6px}
+.tl-item ul{padding-left:18px;margin:8px 0 0}
+.tl-item ul li{list-style:disc;font-size:13px;color:#555;line-height:22px;margin-bottom:4px}
+.sub-title{font-size:18px;margin:0 0 24px;padding-bottom:10px;border-bottom:2px solid #6d0770;display:inline-block}
+.cert-list li{padding:8px 0 8px 22px;position:relative;font-size:13px;color:#555;border-bottom:1px dashed #e5e5e5}
+.cert-list li:before{content:"\f00c";font-family:FontAwesome;position:absolute;left:0;color:#6d0770}
+.project-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.1);margin-bottom:30px;height:calc(100% - 30px);transition:transform .25s}
+.project-card:hover{transform:translateY(-4px)}
+.project-card .thumb{display:block;position:relative;overflow:hidden;aspect-ratio:16/10;background:#eee}
+.project-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.project-card .body{padding:18px 20px 22px}
+.project-card h3{font-size:16px;margin-bottom:4px}
+.project-card .client{font-size:12px;color:#6d0770;font-weight:600;margin-bottom:8px}
+.project-card p{font-size:13px;line-height:22px}
+.tag{display:inline-block;background:#f4e6f5;color:#6d0770;border-radius:12px;padding:1px 10px;font-size:11px;margin:0 4px 4px 0}
+.projects-row{display:flex;flex-wrap:wrap}
+.projects-row>[class*=col-]{display:flex;flex-direction:column}
+.contact-info{text-align:center;margin-bottom:40px}
+.contact-info a{display:inline-block;margin:6px 14px;color:#333;font-size:14px}
+.contact-info i{color:#6d0770;margin-right:6px}
+.single-service i{font-size:38px}
+.footer-area p{margin:0}
+@media(max-width:767px){.welcome-text{padding-top:130px}.welcome-text h1{font-size:26px;line-height:34px}.section-header{margin-bottom:50px}.stats-area{margin-top:-30px}}
+.navbar-custom .nav li.active a,.top-nav-collapse .nav li.active a{color:#e9a7ec!important}
+.proj-links{margin-top:14px}
+.proj-links a{display:inline-block;border-radius:20px;padding:5px 16px;font-size:12px;margin-right:8px;font-weight:600}
+.proj-links .btn-live{background:#6d0770;color:#fff}
+.proj-links .btn-live:hover{background:#4d0550;color:#fff}
+.proj-links .btn-code{border:1px solid #6d0770;color:#6d0770}
+.proj-links .btn-code:hover{background:#6d0770;color:#fff}
+.section-header p{max-width:560px;margin:14px auto 0}
+.navbar-custom.top-nav-collapse .nav li.active a{color:#e9a7ec!important}
+.project-card .thumb{aspect-ratio:16/9}
+/* interactive effects */
+.hero-fx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.banner-area .container{position:relative;z-index:2}
+.liquid-fx{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;transition:opacity .25s;pointer-events:none}
+
+/* animated service icons */
+.svc-icon{display:block;margin:0 0 12px;color:#333;overflow:visible;transition:color .3s}
+.single-service:hover .svc-icon{color:#6d0770}
+.svc-icon .gear{transform-box:fill-box;transform-origin:center;animation:spin-cw 9s linear infinite}
+.svc-icon .gear-small{animation-name:spin-ccw;animation-duration:6.3s}
+.single-service:hover .gear-big{animation-duration:2.6s}
+.single-service:hover .gear-small{animation-duration:1.8s}
+@keyframes spin-cw{to{transform:rotate(360deg)}}
+@keyframes spin-ccw{to{transform:rotate(-360deg)}}
+/* laptop: code is typed, screen glows purple */
+.svc-laptop .code{stroke:#6d0770;stroke-dasharray:40;stroke-dashoffset:40;animation:type 4s ease-in-out infinite}
+.svc-laptop .l2{animation-delay:.5s}.svc-laptop .l3{animation-delay:1s}
+.svc-laptop .cursor{stroke:#6d0770;animation:blink 1s steps(1) infinite}
+.svc-laptop .lap-screen{animation:screen-glow 4s ease-in-out infinite}
+@keyframes type{0%,10%{stroke-dashoffset:40}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:40}}
+@keyframes blink{50%{opacity:0}}
+@keyframes screen-glow{0%,100%{fill:rgba(109,7,112,0)}50%{fill:rgba(109,7,112,.10)}}
+/* bulb: flickers on, glows purple, turns off */
+.svc-bulb .glow{opacity:0;animation:glow 4.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.svc-bulb .bulb-body{animation:bulb-on 4.5s ease-in-out infinite}
+.svc-bulb .fil{animation:fil-on 4.5s ease-in-out infinite}
+.svc-bulb .rays{stroke:#c24fd0;opacity:0;animation:rays-on 4.5s ease-in-out infinite}
+@keyframes bulb-on{0%,15%{fill:rgba(194,79,208,0);stroke:currentColor}20%{fill:rgba(194,79,208,.5)}24%{fill:rgba(194,79,208,.1)}30%,75%{fill:rgba(210,110,222,.55);stroke:#6d0770}100%{fill:rgba(194,79,208,0);stroke:currentColor}}
+@keyframes fil-on{0%,15%{stroke:currentColor}30%,75%{stroke:#fff}100%{stroke:currentColor}}
+@keyframes glow{0%,15%{opacity:0}20%{opacity:.7}24%{opacity:.15}30%,75%{opacity:1;transform:scale(1.08)}100%{opacity:0}}
+@keyframes rays-on{0%,25%{opacity:0}35%,75%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.svc-icon *{animation:none!important}}
