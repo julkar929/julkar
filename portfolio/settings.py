@@ -88,19 +88,22 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if os.environ.get('DATABASE_URL'):
-    # Postgres (Neon / Supabase / Vercel Postgres ...) - needed for the admin and contact form on Vercel
+# On Vercel use the pooled Neon URL (DATABASE_URL_POOLED) if provided; locally / for migrations use DATABASE_URL.
+_db_url = (os.environ.get('DATABASE_URL_POOLED') if ON_VERCEL else None) or os.environ.get('DATABASE_URL')
+if _db_url:
+    # Postgres (Neon / Supabase ...) - needed for the admin and contact form on Vercel
     import urllib.parse
-    _u = urllib.parse.urlparse(os.environ['DATABASE_URL'])
+    _u = urllib.parse.urlparse(_db_url)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': _u.path.lstrip('/'),
-            'USER': _u.username,
+            'USER': urllib.parse.unquote(_u.username or ''),
             'PASSWORD': urllib.parse.unquote(_u.password or ''),
             'HOST': _u.hostname,
             'PORT': _u.port or 5432,
-            'OPTIONS': {'sslmode': 'require'},
+            'OPTIONS': {'sslmode': 'require', 'prepare_threshold': None},  # works with PgBouncer pooling
+            'DISABLE_SERVER_SIDE_CURSORS': True,
             'CONN_MAX_AGE': 0,
         }
     }
