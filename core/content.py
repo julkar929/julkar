@@ -60,7 +60,7 @@ EDUCATION = [
 
 CERTIFICATIONS = [
     "Generative AI Mastermind – Outskill (2026)",
-    "AI-Driven Full Stack Web Engineering (Next.js, NestJS, Express.js, MongoDB) – Programming Hero, Batch 14",
+    "AI-Driven Full Stack Web Engineering (Next.js, NestJS, Express.js, MongoDB) – Programming Hero",
     "Java Certification Course – Programming Hub (2024)",
     "21st Century Employability Skills (Advanced) – Wadhwani Foundation (2023)",
     "Docker Certification Course – Programming Hub (2022)",
