@@ -12,7 +12,7 @@ PROFILE = {
 }
 
 STATS = [
-    ("2+", "Years in industry"),
+    ("3+", "Years in industry"),
     ("5+", "Production systems"),
     ("4+", "Years teaching"),
     ("2", "Degrees (B.Sc., M.Sc.)"),
